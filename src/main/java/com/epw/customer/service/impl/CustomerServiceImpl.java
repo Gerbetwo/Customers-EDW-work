@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.epw.customer.dto.CreateCustomerDto;
+import com.epw.customer.dto.UpdateCustomerDto;
 import com.epw.customer.entity.Customer;
 import com.epw.customer.repository.CustomerRepository;
 import com.epw.customer.service.CustomerService;
@@ -52,6 +53,12 @@ public class CustomerServiceImpl implements CustomerService {
             throw new RuntimeException("No se puede borrar: ID no existe");
         }
         customerRepository.deleteById(id);
+    }
+
+    @Override
+    public Customer update(Long id, UpdateCustomerDto dto) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'update'");
     }
 
 }
