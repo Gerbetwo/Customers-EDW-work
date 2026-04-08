@@ -1,4 +1,4 @@
-package com.epw.activities.entity;
+package com.epw.customer.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

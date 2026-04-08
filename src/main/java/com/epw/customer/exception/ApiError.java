@@ -1,4 +1,4 @@
-package com.epw.activities.exception;
+package com.epw.customer.exception;
 
 import java.time.Instant;
 

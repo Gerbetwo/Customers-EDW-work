@@ -1,13 +1,13 @@
 
-package com.epw.activities.service.impl;
+package com.epw.customer.service.impl;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.epw.activities.dto.CreateCustomerDto;
-import com.epw.activities.entity.Customer;
-import com.epw.activities.repository.CustomerRepository;
-import com.epw.activities.service.CustomerService;
+import com.epw.customer.dto.CreateCustomerDto;
+import com.epw.customer.entity.Customer;
+import com.epw.customer.repository.CustomerRepository;
+import com.epw.customer.service.CustomerService;
 
 import java.util.List;
 

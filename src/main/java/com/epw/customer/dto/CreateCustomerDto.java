@@ -1,4 +1,4 @@
-package com.epw.activities.dto;
+package com.epw.customer.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

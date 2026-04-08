@@ -1,4 +1,4 @@
-package com.epw.activities.exception;
+package com.epw.customer.exception;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;

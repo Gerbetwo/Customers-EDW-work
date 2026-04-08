@@ -1,4 +1,4 @@
-package com.epw.activities.exception;
+package com.epw.customer.exception;
 
 public class ResourceNotFoundException extends RuntimeException {
     public ResourceNotFoundException(String message) {

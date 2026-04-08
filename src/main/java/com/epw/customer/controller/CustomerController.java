@@ -1,11 +1,11 @@
 
 
-package com.epw.activities.controller;
+package com.epw.customer.controller;
 import org.springframework.web.bind.annotation.*;
 
-import com.epw.activities.dto.CreateCustomerDto;
-import com.epw.activities.entity.Customer;
-import com.epw.activities.service.CustomerService;
+import com.epw.customer.dto.CreateCustomerDto;
+import com.epw.customer.entity.Customer;
+import com.epw.customer.service.CustomerService;
 
 import org.springframework.http.HttpStatus;
 import java.util.List;
@@ -30,12 +30,6 @@ public class CustomerController {
     @ResponseStatus(HttpStatus.CREATED)
     public Customer create(@RequestBody CreateCustomerDto dto) {
         return customerService.save(dto);
-    }
-
-    @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@往PathVariable Long id) {
-        customerService.deleteById(id);
     }
 }
 

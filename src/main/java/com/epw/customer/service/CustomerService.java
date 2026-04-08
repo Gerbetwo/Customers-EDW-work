@@ -1,9 +1,9 @@
-package com.epw.activities.service;
+package com.epw.customer.service;
 
 import java.util.List;
 
-import com.epw.activities.dto.CreateCustomerDto;
-import com.epw.activities.entity.Customer;
+import com.epw.customer.dto.CreateCustomerDto;
+import com.epw.customer.entity.Customer;
 
 public interface CustomerService {
     List<Customer> findAll();

@@ -1,8 +1,8 @@
 
-package com.epw.activities.repository;
+package com.epw.customer.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.epw.activities.entity.Customer;
+import com.epw.customer.entity.Customer;
 
 public interface CustomerRepository extends JpaRepository<Customer, Long> {}
