@@ -38,11 +38,15 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     @Transactional
     public Customer save(CreateCustomerDto dto) {
+        if (customerRepository.existsByEmail(dto.getEmail())) {
+            throw new RuntimeException("Ya existe un cliente con ese email");
+        }
+
         Customer customer = new Customer();
         customer.setFullName(dto.getFullName());
         customer.setEmail(dto.getEmail());
         customer.setPhone(dto.getPhone());
-        
+
         return customerRepository.save(customer);
     }
 
@@ -56,9 +60,19 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    @Transactional
     public Customer update(Long id, UpdateCustomerDto dto) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
-    }
+        Customer customer = customerRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Cliente no encontrado con ID: " + id));
 
+        if (customerRepository.existsByEmailAndIdNot(dto.getEmail(), id)) {
+            throw new RuntimeException("Ya existe otro cliente con ese email");
+        }
+
+        customer.setFullName(dto.getFullName());
+        customer.setEmail(dto.getEmail());
+        customer.setPhone(dto.getPhone());
+
+        return customerRepository.save(customer);
+    }
 }
