@@ -1,6 +1,25 @@
--- Contraseñas en texto plano: "admin123", "user123"
--- Hashes generados con BCrypt (10 rondas):
-INSERT INTO users (username, password, role) VALUES
-('admin', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'ROLE_1'),
-('user', '$2a$10$EixZaYVK1fsbw1ZfbX3OXe.PrO/SxwtAM/X1mXmHDiPp5DfMPHSiC', 'ROLE_2')
-ON CONFLICT (username) DO NOTHING;
+-- Menú para rol 1
+INSERT INTO menu_options (role_id, name, content, menu_order)
+SELECT 1, 'customers', 'Customers', 10
+WHERE NOT EXISTS (SELECT 1 FROM menu_options WHERE role_id = 1 AND name = 'customers');
+
+INSERT INTO menu_options (role_id, name, content, menu_order)
+SELECT 1, 'departments', 'Departments', 20
+WHERE NOT EXISTS (SELECT 1 FROM menu_options WHERE role_id = 1 AND name = 'departments');
+
+INSERT INTO menu_options (role_id, name, content, menu_order)
+SELECT 1, 'tmo', 'TMO', 30
+WHERE NOT EXISTS (SELECT 1 FROM menu_options WHERE role_id = 1 AND name = 'tmo');
+
+INSERT INTO menu_options (role_id, name, content, menu_order)
+SELECT 1, 'about', 'About', 40
+WHERE NOT EXISTS (SELECT 1 FROM menu_options WHERE role_id = 1 AND name = 'about');
+
+-- Menú para rol 2
+INSERT INTO menu_options (role_id, name, content, menu_order)
+SELECT 2, 'customers', 'Customers', 10
+WHERE NOT EXISTS (SELECT 1 FROM menu_options WHERE role_id = 2 AND name = 'customers');
+
+INSERT INTO menu_options (role_id, name, content, menu_order)
+SELECT 2, 'about', 'About', 20
+WHERE NOT EXISTS (SELECT 1 FROM menu_options WHERE role_id = 2 AND name = 'about');
