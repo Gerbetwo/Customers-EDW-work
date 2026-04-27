@@ -13,7 +13,7 @@ import com.epw.customer.service.CustomerService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/customers")
+@RequestMapping("api/customers")
 @CrossOrigin(origins = "http://localhost:5173")
 public class CustomerController {
 
